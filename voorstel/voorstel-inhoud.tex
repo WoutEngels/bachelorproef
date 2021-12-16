@@ -3,24 +3,21 @@
 \section{Introductie} % The \section*{} command stops section numbering
 \label{sec:introductie}
 
-Hier introduceer je werk. Je hoeft hier nog niet te technisch te gaan.
-
-Je beschrijft zeker:
-
-\begin{itemize}
-  \item de probleemstelling en context
-  \item de motivatie en relevantie voor het onderzoek
-  \item de doelstelling en onderzoeksvraag/-vragen
-\end{itemize}
+Beveiliging in je infrastructuur is meer en meer een prioriteit aan het worden binnen bedrijven. Men ziet dagelijks in het nieuws voorbeelden van hoe het fout kan lopen en welke gevolgen dit kan hebben voor een bedrijf. Dit kan gaan van enorme extra kosten tot schade aan het bedrijfsimago. In bedrijven met complexe infrastructuur kan het onoverzichtelijk worden voor beveiligingsspecialisten om alle waarschuwingen manueel te blijven bekijken. Misschien zijn er bepaalde onderdelen die nood hebben aan verbetering? Zijn er gewoonweg tekortkomingen? Dit ga ik proberen uitzoeken door een gepaste SIEM oplossing te zoeken voor Corilus NV. Door middel van een implementatie van SIEM zullen we dus waarschijnlijk meer duidelijkheid scheppen in waarschuwingen door context rijke logbestanden en zo tijd en geld besparen.
 
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{State-of-the-art}
 \label{sec:state-of-the-art}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein. Dit kan bijvoorbeeld een literatuurstudie zijn. Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek? Wat is de relevantie met jouw onderzoek?
+Veel SIEM oplossingen bieden een gebruiksvriendelijke omgeving aan. Visualisatie en reactievermogen zijn echter nog gelimiteerd om met de enorme hoeveelheid data om te kunnen gaan. Deze oplossingen bieden goede data opslag, maar vaak ten kosten van een hogere prijs. Elastic SIEM\footnote{\url{https://www.elastic.co/siem/}} \href{https://www.elastic.co/siem/} oplossingen worden gezien als een veelbelovend alternatief voor dit probleem.
+\\\autocite{GonzalezGranadillo2021}\medskip
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Doll1954}! Denk zeker goed na welke werken je refereert en waarom.
+Bescherming van kritische infrastructuur is één van de belangrijkste uitdagingen van de afgelopen jaren. Security Information and Event Management (SIEM) systemen worden hiervoor al veel gebruikt. Hiermee kunnen ze realtime monitoring uitvoeren. SIEM oplossingen zijn een combinatie van de eerdere heterogene product categorieën Security Information Management (SIM) en Security Event Management (SEM). SEM dient voor de aggregatie van gegevens tot een beheersbare hoeveelheid informatie. Met deze informatie kunnen beveiligingsproblemen dan onmiddellijk opgelost worden. SIM dient voornamelijk om historische data te analyseren om de effectiviteit en efficiëntie van informatiebeveiligingsinfrastructuur op lange termijn te verbeteren. \autocite{Garofalo2014}\medskip
+
+Een van de voornaamste kenmerken van de SIEM oplossingen zijn hun geavanceerde mogelijkheden voor logbeheer. Logboek management is het proces van het omgaan met grote hoeveelheden computer gegenereerde logberichten. De belangrijkste problemen met logbeheer is meestal het enorme volume van de loggegevens en de diversiteit van de logs. Een SIEM oplossing correleert, analyseert en rapporteert informatie van verschillende gegevensbronnen zoals netwerkapparaten, besturingssystemen, applicaties,... Het eindresultaat is een holistische kijk op informatiebeveiliging binnen het bedrijf.\\\autocite{Cerullo2014} en \autocite{Mavroeidis2021}\medskip
+
+Uit de eerdere citaten blijkt dat er al heel wat onderzoek is gedaan naar SIEM. Velen concluderen dat er toch een aantal tekortkomingen zijn. SIEM werkt op homogene data maar kan niet goed rekening houden met data die uit meerdere lagen. Daarnaast zijn er vaak nog context problemen waardoor er geen duidelijkheid is over de ernst van de waarschuwingen. We gaan onderzoeken welke SIEM oplossing het best is voor gebruik in een bedrijfsomgeving met gevoelige gegevens.
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -29,23 +26,35 @@ Verwijs bij elke introductie van een term of bewering over het domein naar de va
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
 
-Je mag gerust gebruik maken van subsecties in dit onderdeel.
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor experimenten, vragenlijsten, simulaties? Je beschrijft ook al welke tools je denkt hiervoor te gebruiken of te ontwikkelen.
+Voor dit onderzoek zullen enkele simulaties uitgevoerd worden. Bij elke simulatie ga ik een andere SIEM oplossing gebruiken. Als er duidelijke tekortkomingen zijn, zal er gezocht worden naar een bijhorende tool om dit te verhelpen. Er zal getest worden op basis van volgende criteria:
+\medskip
+\begin{itemize}
+\item Gebruiksvriendelijkheid
+\item Kosten
+\item Duidelijkheid van context
+\item Mogelijkheid tot automatisatie
+\item Snelheid van verwerken data
+\end{itemize}
+\medskip
+Een aantal tools die getest zullen worden zijn Elastic SIEM met Kibana\footnote{\url{https://www.elastic.co/kibana/}}, Wazuh\footnote{\url{https://wazuh.com/}} met Kibana.
+Andere tools die misschien gebruikt gaan worden zijn SolarWinds Security Event Manager\footnote{\url{https://www.solarwinds.com/security-event-manager}} en Datadog Security. Monitoring\footnote{\url{https://www.datadoghq.com/dg/security-monitoring/}}\medskip
+
+We zullen deze lokaal testen met een aantal VM's die de infrastructuur van een klein bedrijf simuleren.
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwachte resultaten}
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de stukken van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet hoe je je data gaat moeten structureren.
+Tussen de verscheidene tools zelf kan ik nog niet genoeg onderscheidt maken om al te zeggen welke oplossing het beste resultaat gaat geven voor de verschillende criteria. Dit zal wellicht volgen uit de simulaties. De snelheid van het verwerken van de data en de duidelijkheid van de verkregen context zullen niet optimaal zijn wanneer er een grote hoeveelheid homogene data gebruikt wordt.
 
 %---------- Verwachte conclusies ----------------------------------------------
 \section{Verwachte conclusies}
 \label{sec:verwachte_conclusies}
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+Er wordt verwacht uit de eerdere onderzoeken dat de Elastic SIEM oplossing een veelbelovende optie is. Daarnaast zullen er zeker bepaalde tekortkomingen zijn in bijna alle tools. Wel verwachten we dat er zekere oplossingen gaan bestaan om zelfs de beste SIEM oplossing nog te verbeteren.
 

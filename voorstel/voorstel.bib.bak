@@ -43,18 +43,4 @@
   timestamp    = {Mon, 13 Aug 2018 16:46:28 +0200},
 }
 
-@Article{Mavroeidis2021,
-  author       = {Vasileios Mavroeidis and Audun J{\o}sang},
-  date         = {2021},
-  journaltitle = {CoRR},
-  title        = {Data-Driven Threat Hunting Using Sysmon},
-  eprint       = {2103.15194},
-  eprinttype   = {arXiv},
-  url          = {https://arxiv.org/abs/2103.15194},
-  volume       = {abs/2103.15194},
-  bibsource    = {dblp computer science bibliography, https://dblp.org},
-  biburl       = {https://dblp.org/rec/journals/corr/abs-2103-15194.bib},
-  timestamp    = {Wed, 07 Apr 2021 15:31:46 +0200},
-}
-
 @Comment{jabref-meta: databaseType:biblatex;}
